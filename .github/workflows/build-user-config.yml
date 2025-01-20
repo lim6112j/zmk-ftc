@@ -5,7 +5,7 @@ on:
     inputs:
       build_matrix_path:
         description: "Path to the build matrix file"
-        default: "build.yaml"
+        default: "build.yml"
         required: false
         type: string
       config_path:
@@ -89,7 +89,7 @@ jobs:
             zephyr/
             bootloader/
             zmk/
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/west.yml', '**/build.yaml') }}
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/west.yml', '**/build.yml') }}
           restore-keys: |
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
