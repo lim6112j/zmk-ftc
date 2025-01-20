@@ -107,7 +107,7 @@ jobs:
       - name: West Build (${{ steps.variables.outputs.display-name }})
         run: |
           set -x
-          west build -s zmk/app -b ${{ matrix.board }} -- -DZMK_CONFIG=${GITHUB_WORKSPACE}/${{ inputs.config_path }} ${{ steps.variables.outputs.extra-cmake-args }} ${{ matrix.cmake-args }}
+          west build -s zmk-ftc/app -b ${{ matrix.board }} -- -DZMK_CONFIG=${GITHUB_WORKSPACE}/${{ inputs.config_path }} ${{ steps.variables.outputs.extra-cmake-args }} ${{ matrix.cmake-args }}
 
       - name: ${{ steps.variables.outputs.display-name }} Kconfig file
         run: grep -v -e "^#" -e "^$" build/zephyr/.config | sort
