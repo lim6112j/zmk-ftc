@@ -5,7 +5,7 @@ on:
     inputs:
       build_matrix_path:
         description: "Path to the build matrix file"
-        default: "build.yml"
+        default: "build.yaml"
         required: false
         type: string
       config_path:
